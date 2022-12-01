@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
+import ForgotPassword from "./components/ForgotPassword";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export default function App() {
@@ -22,7 +23,10 @@ export default function App() {
         }, {
             path: "/login",
             element: <Login />
-        },
+        }, {
+            path: "/forgot-password",
+            element: <ForgotPassword />
+        }
     ]);
 
     return (
