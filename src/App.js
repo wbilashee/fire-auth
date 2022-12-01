@@ -2,11 +2,20 @@ import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { Container } from "react-bootstrap";
+import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export default function App() {
     const router = createBrowserRouter([
+        {
+            path: "/",
+            element:
+                <PrivateRoute>
+                    <Dashboard />
+                </PrivateRoute>,
+        },
         {
             path: "/signup",
             element: <Signup />,
